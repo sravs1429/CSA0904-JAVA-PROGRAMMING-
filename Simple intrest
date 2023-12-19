@@ -1,0 +1,44 @@
+import java.io.*;
+import java.util.*;
+class sii
+{
+public static void main(String args[])
+{
+try
+{
+double p,i,si;
+int n;
+System.out.println("enter the principal amount:");
+Scanner t = new Scanner(System.in);
+p = t.nextDouble();
+System.out.println("enter no.of years:");
+n = t.nextInt();
+System.out.println("Is senior citizen(y/n):");
+char g = t.next().charAt(0);
+if (g=='y'||g=='Y')
+{
+i = 12;
+si = (p*n*i)/100;
+System.out.println("simple interest is:"+si);
+}
+if (g=='n'|| g=='N')
+{
+i=10;
+si =(p*n*i)/100;
+System.out.println("simple interest is:"+si);
+}
+if (p<=0)
+{
+System.out.println("enter the valid amount");
+}
+if (n<=0)
+{
+System.out.println("enter valid no.of years");
+}
+}
+catch (Exception e)
+{
+System.out.println("invalid");
+}
+}
+}
