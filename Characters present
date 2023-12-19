@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class CharacterSearch {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Input a string
+        System.out.print("Enter the string: ");
+        String inputString = scanner.nextLine();
+
+        // Input the character to be searched
+        System.out.print("Enter the character to be searched: ");
+        char searchChar = scanner.next().charAt(0);
+
+        // Search for the character in the string
+        int index = findCharacterIndex(inputString, searchChar);
+
+        // Display the result
+        if (index != -1) {
+            System.out.println(searchChar + " is found in string at index: " + index);
+        } else {
+            System.out.println(searchChar + " is not found in the string.");
+        }
+    }
+
+    private static int findCharacterIndex(String str, char targetChar) {
+        // Iterate through the string to find the character
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) == targetChar) {
+                return i; // Return the index if the character is found
+            }
+        }
+        return -1; // Return -1 if the character is not found
+    }
+}
